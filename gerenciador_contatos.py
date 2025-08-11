@@ -1,5 +1,6 @@
+
 # Gerenciador de Contatos - CRUD em Python
-#Membros: João Pedro Santana, Luis Augusto Barbosa, Victor Torres, Ezequiel, Cleybson Teixeira
+#Membros: João Pedro Santana, Luis Augusto Barbosa, Victor Torres, Ezequiel, Cleybson Teixeira, Marlio Ramos
 
 contatos = []
 
@@ -8,16 +9,28 @@ def cadastrar_contato():
 
   while True:
     nome = input("Digite o nome: ").strip()
-    if nome:
-      break
-    print("O campo não pode ser vazio")
+
+    if not nome:
+      print("Erro: O campo 'nome' não pode ser vazio")
+      continue
+
+    if nome.isnumeric():
+        print("Erro: O campo 'nome' não pode conter numero")
+        continue
+
+    break
 
   while True:
     telefone = input("Digite o número: ").strip()
-    if telefone:
-      break
-    print("O campo não pode ser vazio")
+    if not telefone:
+        print("Erro: O campo 'telefone' não pode ser vazio")
+        continue
 
+    if telefone.isalpha():
+      print("Erro: O campo 'telefone' não pode conter letras")
+      continue
+
+    break
   while True:
     email = input("Digite o e-mail: ").strip()
     if email:
